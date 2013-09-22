@@ -1,0 +1,51 @@
+<div ng-controller="EssayDetailCtrl">
+        <!--Body content-->
+        <div>
+            <small class="pull-right">
+                <dl class="dl-horizontal">
+                    <dt>
+                        Author :
+                    </dt>
+                    <dd>
+                        {[{ essay.owner }]}
+                    </dd>
+                    <dt>
+                        Posted :
+                    </dt>
+                    <dd>
+                        {[{ essay.created | date:"medium" }]}
+                    </dd>
+
+                </dl>
+            </small>
+
+            <h1>
+                {[{ essay.title }]}
+            </h1>
+
+            <div class="clearfix"></div>
+            <div class="content" style="text-indent: 50px;">
+                <p>
+                    {[{ intro.intro }]}
+                    {[{ intro.transition }]}
+                    {[{ intro.thesis }]}
+                    {[{ intro.conclusion }]}
+                </p>
+                <p ng-repeat="body in body">
+                        {[{ body.intro }]}
+                        {[{ body.transition }]}
+                        {[{ body.body }]}
+                        {[{ body.conclusion }]}
+                </p>
+                <p>
+                    {[{ conclusion.intro }]}
+                    {[{ conclusion.transition }]}
+                    {[{ conclusion.thesis }]}
+                    {[{ conclusion.body }]}
+                    {[{ conclusion.conclusion }]}
+                </p>
+            </div>
+
+        </div>
+
+    </div>
